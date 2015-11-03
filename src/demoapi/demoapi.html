@@ -1,0 +1,42 @@
+<div class="container" >    
+    <div class="col-md-3" >                    
+        <div class="panel panel-primary" >
+            <!-- <div class="panel-heading">
+                <div class="panel-title">Search Book</div>
+            </div> -->     
+
+            <div class="panel-body login-form" >
+                <input type="text" class="form-control" placeholder="bookname" ng-model="bookname"/>
+                </br>
+                <div class="form-group">
+                    <input type="button" class="btn btn-lg btn-warning btn-block" value="Search book" ng-click="searchBooks(bookname)">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 search-result" >
+    	<table >
+			<tr ng-repeat="book in books">
+				<td class="well">
+					<div class=" col-md-4">
+						<img ng-src="{{ book.volumeInfo.imageLinks.thumbnail }}">
+					</div>
+					<div class="col-md-8">
+						<label>{{ book.volumeInfo.title }}</label>
+						<blockquote class="small text-danger" style="height: 80px; overflow: hidden;">
+						{{ book.volumeInfo.description }}
+						</blockquote>
+						<ul class="list-unstyled small">
+							<li><strong>Author : </strong><span ng-bind="book.volumeInfo.authors"></span></li>
+							<li><strong>Year : </strong><span ng-bind="book.volumeInfo.publishedDate"></span></li>
+							<li><strong>Publisher : </strong><span ng-bind="book.volumeInfo.publisher"></span></li>
+						</ul>
+					</div>
+					<!-- <div class="col-md-3">
+					</div> -->
+				</td>
+			</tr>
+		</table>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+
+
+body {
+  	padding-top: 100px; 
+  	text-align: center;
+  	background-color:#F4F4F4;
+}
+
+.search-result{
+	height: 800px;
+	overflow-y:auto;
+}
